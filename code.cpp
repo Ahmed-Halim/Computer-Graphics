@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <math.h>
 #include <windows.h>
 #include <gl/gl.h>
 #include <gl/glut.h>
@@ -47,9 +47,9 @@ void Triangle() {
     glEnd();
 }
 
-void Circle(float h, float k, float r, float Start, float End, bool Filled = false) {
+void Circle(float h, float k, float r, float Start, float End) {
     glColor3f(0, 0, 0);
-    glBegin(Filled ? GL_POLYGON : GL_LINE_LOOP);
+    glBegin(GL_POLYGON);
     for (float i = Start; i <= End; i++){
         float theta = DTR(i);
         float x = (r * cos(theta) + h);
@@ -59,9 +59,9 @@ void Circle(float h, float k, float r, float Start, float End, bool Filled = fal
     glEnd();
 }
 
-void Ellipse(float h, float k, float r, float Start, float End, float ExtendX, float ExtendY, bool Filled = false) {
+void Ellipse(float h, float k, float r, float Start, float End, float ExtendX, float ExtendY) {
     glColor3f(0, 0, 0);
-    glBegin(Filled ? GL_POLYGON : GL_LINE_LOOP);
+    glBegin(GL_POLYGON);
     for (float i = Start; i <= End; i++) {
         float theta = DTR(i);
         float x = (r * cos(theta) + h) * ExtendX;
