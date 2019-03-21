@@ -52,8 +52,8 @@ void Circle(float h, float k, float r, float Start, float End) {
     glBegin(GL_POLYGON);
     for (float i = Start; i <= End; i++){
         float theta = DTR(i);
-        float x = (r * cos(theta) + h);
-        float y = (r * sin(theta) + k);
+        float x = r * cos(theta) + h;
+        float y = r * sin(theta) + k;
         glVertex2f(x, y);
     }
     glEnd();
